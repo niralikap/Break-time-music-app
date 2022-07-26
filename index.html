@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./style.css" />
+  <title>Break-time App</title>
+</head>
+<body>
+  <div class="container border">
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" id="home">
+            Home
+          </a>
+    
+          <a class="navbar-item" id="contact">
+            Contact
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <div class="field">
+      <div class="control">
+        <input class="input is-rounded" id="mood" type="text" placeholder="Happy">
+      </div>
+    </div>
+    
+    <div class="field">
+      <div class="control">
+        <div class="select is-rounded">
+          <select>
+            <option class="music-genres" id="select">Musical Genres</option>
+            <option class="music-genres" id="pop-music">Pop Music</option>
+            <option class="music-genres" id="jazz-music">Jazz Music</option>
+            <option class="music-genres" id="classical-music">Classical Music</option>
+            <option class="music-genres" id="country-music">Country Music</option>
+            <option class="music-genres" id="hiphop-music">Hip Hop Music</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="field is-grouped">
+      <div class="control">
+        <button class="button is-link" id="submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./script.js"></script>
+</html>
