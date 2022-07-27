@@ -6,52 +6,73 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="./style.css" />
-  <title>Break-time App</title>
+  <title>Foodie's App</title>
 </head>
 <body>
-  <div class="container border">
+  <div class="container">
     <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" id="home">
+      <div id="navbarBasicExample" class="navbar-end">
+        <div class="navbar-end">
+          <a class="navbar-item avbar-end" id="home" href="#">
             Home
           </a>
-    
-          <a class="navbar-item" id="contact">
-            Contact
+          <a class="navbar-item avbar-menu" id="contact" href="#">
+            Contact Us
           </a>
         </div>
       </div>
     </nav>
   </div>
-  <div class="container">
-    <div class="title" id="big-title">Big title</div>
-    <div class="field">
-      <div class="control">
-        <input class="input is-rounded" id="mood" type="text" placeholder="Happy">
-      </div>
-    </div>
-    
-    <div class="field">
-      <div class="control">
-        <div class="select is-rounded">
-          <select>
-            <option class="music-genres" id="select">Musical Genres</option>
-            <option class="music-genres" id="pop-music">Pop Music</option>
-            <option class="music-genres" id="jazz-music">Jazz Music</option>
-            <option class="music-genres" id="classical-music">Classical Music</option>
-            <option class="music-genres" id="country-music">Country Music</option>
-            <option class="music-genres" id="hiphop-music">Hip Hop Music</option>
-          </select>
+
+  <div class="tile is-ancestor">
+    <div class="tile is-vertical is-8">
+      <div class="tile">
+        <div class="tile is-parent is-vertical">
+          <article class="tile is-child notification is-primary">
+            <p class="title">Restaurant List:</p>
+            <p class="restaurants" id="restaurant-list"></p>
+          </article>
+          <article class="tile is-child notification is-warning">
+            <p class="title">Recipes:</p>
+            <p class="Recipes" id="Recipes-list"></p>
+          </article>
         </div>
+        
       </div>
+      
     </div>
-    <div class="field is-grouped">
-      <div class="control">
-        <button class="button is-link" id="submit">Submit</button>
-      </div>
+    <div class="tile is-parent">
+      <article class="tile is-child notification is-success">
+        <div class="content">
+          <p class="title" id="food-title">Title</p>
+          <p class="subtitle" id="one-sentence">Please enter the food you like</p>
+          <div class="container">
+            <div class="field">
+              <div class="control">
+                <input class="input is-rounded" id="food-input" type="text" placeholder="Pizza">
+              </div>
+            </div>
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-link" id="search">Search</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </article>
     </div>
   </div>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+        <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+        is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+  </footer>
 </body>
 <script src="./script.js"></script>
 </html>
