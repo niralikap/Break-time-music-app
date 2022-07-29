@@ -6,7 +6,7 @@ var restaurant2El = document.querySelector('#restaurants-2');
 var restaurant3El = document.querySelector('#restaurants-3');
 var restaurant4El = document.querySelector('#restaurants-4');
 var restaurant5El = document.querySelector('#restaurants-5');
-
+//Update somthing
 function getRestaurants (zipcode) {
     const options = {
         method: 'GET',
