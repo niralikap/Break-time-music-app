@@ -1,6 +1,8 @@
+
 var restaurantInputEl = document.querySelector('#restaurant-input');
 var restaurantContEl = document.querySelector('#restaurant-container');
 var restaurantBtnContEl = document.querySelector('#restaurant-button-container');
+
 var restaurant1El = document.querySelector('#restaurants-1');
 var restaurant2El = document.querySelector('#restaurants-2');
 var restaurant3El = document.querySelector('#restaurants-3');
@@ -16,6 +18,7 @@ function getRestaurants (zipcode) {
         }
     };
     fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/'+zipcode+'/0', options)
+
         .then(function (response) {
             if(response.ok){
                 return response.json();
