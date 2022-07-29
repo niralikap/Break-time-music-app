@@ -1,7 +1,8 @@
 
-var foodInputEl = document.querySelector('#food-input');
-var searchButton = document.querySelector('#search');
-var restaurantListEl = document.querySelector('#restaurant-list');
+var restaurantInputEl = document.querySelector('#restaurant-input');
+var restaurantContEl = document.querySelector('#restaurant-container');
+var restaurantBtnContEl = document.querySelector('#restaurant-button-container');
+
 var restaurant1El = document.querySelector('#restaurants-1');
 var restaurant2El = document.querySelector('#restaurants-2');
 var zipcode = 94109;
@@ -87,33 +88,6 @@ function getRestaurants (zipcode) {
         }
     };
     fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/'+zipcode+'/0', options)
-        
-
-        /*const options = {
-          method: 'GET',
-          headers: {
-            'X-RapidAPI-Key': '77c8fec0d0mshdb05a13cd8505e8p1c1508jsn238f4fdfc268',
-            'X-RapidAPI-Host': 'restaurants-near-me-usa.p.rapidapi.com'
-          }
-        };
-        
-        fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/' + zipcode + '/0', options)
-          .then(response => response.json())
-          .then(response => console.log(response))
-          .catch(err => console.error(err));*/
-
-          const options = {
-            method: 'GET',
-            headers: {
-              'X-RapidAPI-Key': '77c8fec0d0mshdb05a13cd8505e8p1c1508jsn238f4fdfc268',
-              'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-            }
-          };
-          
-          fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&name=pizza', options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
 
         .then(function (response) {
             if(response.ok){
@@ -121,7 +95,7 @@ function getRestaurants (zipcode) {
             }
         })
         .then(function(data){
-            console.log(data);
+            // console.log(data);
             
             restaurant1El.textContent = data.restaurants[1].restaurantName;
             restaurant2El.textContent = data.restaurants[2].restaurantName;
@@ -131,88 +105,53 @@ function getRestaurants (zipcode) {
         })
 }
 
-
-
-
-function zipcodeClickHandler(event) {
-    event.preventDefault();
-    var inputzipcode = restaurantInputEl.value.trim();
-    getRestaurants(inputzipcode);
-    // restaurantContEl.value = '';
-    console.log(inputzipcode);
-}
-
-restaurantBtnContEl.addEventListener('click', zipcodeClickHandler);
-/*const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '77c8fec0d0mshdb05a13cd8505e8p1c1508jsn238f4fdfc268',
-        'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-    }
-};
-fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes&q=pizza', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));*/
-
-// var formSubmitHandler = function (event) {
-//         event.preventDefault();
-//         var foodname = foodInputEl.value.trim();
-//         if (foodname) {
-//           getUserRepos(username);
-//           repoContainerEl.textContent = '';
-//           foodInputEl.value = '';
-//         } else {
-//           alert('Please enter a food item');
-//         }
-//       };
-
-// var getRestaurants = function (food) {
-//         var apiUrl = 'https://api.github.com/users/' + user + '/repos';
-//         fetch(apiUrl)
-//           .then(function (response) {
-//             if (response.ok) {
-//               console.log(response);
-//               response.json().then(function (data) {
-//                 console.log(data);
-//                 displayRepos(data, user);
-//               });
-//             } else {
-//               alert('Error: ' + response.statusText);
-//             }
-//           })
-//           .catch(function (error) {
-//             alert('Unable to connect to GitHub');
-//           });
-//       };
-//       var displayRestaurants = function (restaurants) {
-//         if (restaurants.length === 0) {
-//             restaurantListEl.textContent = 'No restaurants found.';
-//             // Without a `return` statement, the rest of this function will continue to run and perhaps throw an error if `repos` is empty
-//             return;
-//           }
-//           /*for (var i = 0; i < 5; i++) {
-//             // The result will be `<github-username>/<github-repository-name>`
-//             var restaurantN = restaurants[i].restaurantName;
-//             restaurantListEl.append(restaurantN);*/
-//             restaurant1El.textContent = ‘Temp: ‘+ lastItem.dTwoTemp + ‘°F’;
+function getVideos() {
     // const options = {
     //     method: 'GET',
     //     headers: {
     //         'X-RapidAPI-Key': '77c8fec0d0mshdb05a13cd8505e8p1c1508jsn238f4fdfc268',
-    //         'X-RapidAPI-Host': 'restaurants-near-me-usa.p.rapidapi.com'
+    //         'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
     //     }
     // };
-    // fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/state/MI/city/West%20Bloomfield/0', options)
-    //     .then(response => response.json())
-    //     .then(response => console.log(response))
-    //     .catch(err => console.error(err));
+    // fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '77c8fec0d0mshdb05a13cd8505e8p1c1508jsn238f4fdfc268',
+            'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+        }
+    };
+    fetch('https://tasty.p.rapidapi.com/recipes/list-similarities?recipe_id=8138', options)
+    .then(function (response) {
+        if(response.ok){
+            return response.json();
+        }
+    })
+    .then(function(data){
+        console.log(data);
+        for(var i = 0; i < data.results.length; i++) {
+            // console.log(data.results[i]);
+            // console.log(i)
+            if(data.results[i].video_url !== null) {
+                console.log(data.results[i].name);
+                console.log(data.results[i].video_url, i);
+            }
+        }  
+    })
+}
 
-      
 
+function zipcodeClickHandler() {
+    var inputzipcode = restaurantInputEl.value.trim();
+    getRestaurants(inputzipcode);
+    restaurantContEl.value = '';
+    console.log(inputzipcode);
+}
 
-
-// formSubmitHandler
+restaurantBtnContEl.addEventListener('click', function(){
+    zipcodeClickHandler();
+    getVideos()
+});
 
 
 
