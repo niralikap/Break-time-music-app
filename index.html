@@ -31,16 +31,18 @@
           <article class="tile is-child notification is-primary">
             <p class="title">Restaurant List:</p>
             <ul class="restaurants" id="restaurant-list">
+
               <li id=“restaurants-1”>Restaurant name</li>
               <li id=“restaurants-2">Restaurant name</li>
               <li id=“restaurants-3”>Restaurant name</li>
               <li id=“restaurants-4">Restaurant name</li>
               <li id=“restaurants-5”>Restaurant name</li>
+
             </ul>
           </article>
           <article class="tile is-child notification is-warning">
             <p class="title">Recipes:</p>
-            <p class="Recipes" id="Recipes-list"></p>
+            <div class="Recipes" id="Recipes-list"></div>
           </article>
         </div>
         
@@ -50,9 +52,20 @@
     <div class="tile is-parent">
       <article class="tile is-child notification is-success">
         <div class="content">
-          <p class="title" id="food-title">Title</p>
-          <p class="subtitle" id="one-sentence">Please enter the food you like</p>
+          <p class="title" id="food-title">Foodie</p>
           <div class="container">
+            <p class="subtitle" id="one-sentence">Please enter the zipCode.</p>
+            <div class="field" id="restaurant-container">
+              <div class="control">
+                <input class="input is-rounded" id="restaurant-input" type="text" placeholder="94109">
+              </div>
+            </div>
+            <div class="field is-grouped" id="restaurant-button-container">
+              <div class="control">
+                <button class="button is-link" id="search">Search</button>
+              </div>
+            </div>
+            <p class="subtitle" id="one-sentence">Please enter the food you like.</p>
             <div class="field">
               <div class="control">
                 <input class="input is-rounded" id="food-input" type="text" placeholder="Pizza">
@@ -63,7 +76,6 @@
                 <button class="button is-link" id="search">Search</button>
               </div>
             </div>
-
           </div>
         </div>
       </article>
