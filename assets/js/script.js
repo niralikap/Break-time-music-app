@@ -27,7 +27,7 @@ function getRestaurants (zipcode) {
             }
         })
         .then(function(data){
-            // console.log(data);
+            console.log(data);
             var restaurantList = {
                 listRestaurant1: data.restaurants[1].restaurantName,
                 listRestaurant2: data.restaurants[2].restaurantName,
@@ -66,16 +66,21 @@ function getVideos() {
     .then(function(data){
         console.log(data);
         for(var i = 0; i < data.results.length; i++) {
-            // console.log(data.results[i]);
-            // console.log(i)
+
             if(data.results[i].video_url !== null) {
-                console.log(data.results[i].name);
-                // console.log(data.results[i].video_url, i);
-                var vN = document.createElement('li');
-                vN.innerHTML = data.results[i].name
-                // var videoNameEl = `<li ${data.results[i].name}></li>`;
-                // videoNameEl.innerHTML = videoNameEl;
-                // var videoEl = data.results[i].video_url;
+
+                var newList = document.createElement('li');
+                var newDiv = document.createElement('div');
+                var newName = document.createElement('h3');
+                newName.textContent = data.results[i].name;
+                var newLink = document.createElement('a');
+                newLink.setAttribute('href', data.results[i].video_url)
+                newLink.textContent = data.results[i].video_url;
+                newDiv.appendChild(newName)
+                newDiv.appendChild(newLink)
+                newList.appendChild(newDiv)
+                videoListEl.appendChild(newList)
+
                 
             }
         }  
