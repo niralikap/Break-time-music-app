@@ -8,74 +8,90 @@
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Foodie's App</title>
 </head>
-<body>
-  <div class="container">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div id="navbarBasicExample" class="navbar-end">
-        <div class="navbar-end">
-          <a class="navbar-item avbar-end" id="home" href="#">
-            Home
-          </a>
-          <a class="navbar-item avbar-menu" id="contact" href="#">
-            Contact Us
-          </a>
-        </div>
-      </div>
-    </nav>
-  </div>
 
-  <div class="tile is-ancestor">
+<body>
+<nav class="level">
+  <p class="level-item has-text-centered">
+    <a class="link is-info">Home</a>
+  </p>
+  
+  
+  <p class="level-item has-text-centered">
+    <img src="./assets/images/image11.jpg" alt="" style="height: 50px;">
+  </p>
+  
+  <p class="level-item has-text-centered">
+    <a class="link is-info" href="#contact">Contact Us</a>
+    <div class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <!-- Any other Bulma elements you want -->
+        <p>Hello</p>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+  </p>
+   
+</nav>
+<image>
+  <img src="./assets/images/image12.jpg" alt="Foodie" style="background-image: url('./assets/images/image3.jpg'); height: 500px; width: 1400px;">
+</image>
+<div class="tile is-ancestor">
     <div class="tile is-vertical is-8">
       <div class="tile">
         <div class="tile is-parent is-vertical">
           <article class="tile is-child notification is-primary">
-            <p class="title">Restaurant List:</p>
+            <p class="title">Restaurants Near Me</p>
+            <p class="subtitle">Enter the Zip Code</p>
+            <div class="field" id="restaurant-container">
+            <input class="input" id="restaurant-input" type="text" placeholder="94105">
+          </div>
+          <div class="field is-grouped" id="restaurant-button-container">
+            <button class="button is-success is-light">Search</button>
+          </div>
+          </article>
+          <article class="tile is-child notification is-warning">
+            <p class="title" id="restaurant-container">List of Restaurants:</p>
+            <p class="subtitle"></p>
             <ul class="restaurants" id="restaurant-list">
 
-              <li id="restaurants-1">Restaurant name</li>
-              <li id="restaurants-2">Restaurant name</li>
-              <li id="restaurants-3">Restaurant name</li>
-              <li id="restaurants-4">Restaurant name</li>
-              <li id="restaurants-5">Restaurant name</li>
+              <li id="restaurants-1"></li>
+              <li id="restaurants-2"></li>
+              <li id="restaurants-3"></li>
+              <li id="restaurants-4"></li>
+              <li id="restaurants-5"></li>
 
             </ul>
           </article>
-          <article class="tile is-child notification is-warning">
-            <p class="title">More food videos:</p>
-            <ul class="video" id="video-list"></ul>
-              <!-- <li one></li> -->
+        </div>
+        <div class="tile is-parent">
+          <article class="tile is-child notification is-info">
+            <p class="title">Hungry?</p>
+            <p class="subtitle">Find a nearby restaurant or learn to make your meal using our awesome recipe videos!</p>
+            <figure class="image is-4by3">
+              <img src="./assets/images/image6.jpg">
+            </figure>
           </article>
         </div>
-      </div>  
+      </div>
+      <div class="tile is-parent">
+        <article class="tile is-child notification is-danger">
+          <p class="title" id="contact">Contact Us:</p>
+          <p class="subtitle"> foodie@foodies.com</p>
+          
+          <p>123-456-7890</p>
+          
+        </article>
+      </div>
     </div>
-
     <div class="tile is-parent">
       <article class="tile is-child notification is-success">
         <div class="content">
-          <p class="title" id="food-title">Foodie</p>
-          <div class="container">
-            <p class="subtitle" id="one-sentence">Please enter the zipCode.</p>
-            <div class="field" id="restaurant-container">
-              <div class="control">
-                <input class="input is-rounded" id="restaurant-input" type="text" placeholder="94109">
-              </div>
-            </div>
-            <div class="field is-grouped" id="restaurant-button-container">
-              <div class="control">
-                <button class="button is-link" id="search">Search</button>
-              </div>
-            </div>
-            <!-- <p class="subtitle" id="one-sentence">Please enter the food you like.</p>
-            <div class="field">
-              <div class="control">
-                <input class="input is-rounded" id="food-input" type="text" placeholder="Pizza">
-              </div>
-            </div>
-            <div class="field is-grouped">
-              <div class="control">
-                <button class="button is-link" id="search">Search</button>
-              </div>
-            </div> -->
+          <p class="title">Recipes</p>
+          <p class="subtitle"></p>
+          <div class="content">
+            <!-- Content -->
+            <ul class="video" id="video-list"></ul>
           </div>
         </div>
       </article>
@@ -92,5 +108,5 @@
     </div>
   </footer>
 </body>
-<script src="./assets/js/script.js"></script>
+<script src="./assets/js/script1.js"></script>
 </html>
