@@ -15,8 +15,8 @@ function getRestaurants (zipcode) {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '77c8fec0d0mshdb05a13cd8505e8p1c1508jsn238f4fdfc268',
-            'X-RapidAPI-Host': 'restaurants-near-me-usa.p.rapidapi.com'
+            'X-RapidAPI-Key': '717b7aa287mshd26234a7983062ap1889c4jsn203d0606c5be',
+		    'X-RapidAPI-Host': 'restaurants-near-me-usa.p.rapidapi.com'
         }
     };
     fetch('https://restaurants-near-me-usa.p.rapidapi.com/restaurants/location/zipcode/'+zipcode+'/0', options)
@@ -53,8 +53,8 @@ function getVideos() {
     const optionVideos = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '77c8fec0d0mshdb05a13cd8505e8p1c1508jsn238f4fdfc268',
-            'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+            'X-RapidAPI-Key': '717b7aa287mshd26234a7983062ap1889c4jsn203d0606c5be',
+		    'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
         }
     };
     fetch('https://tasty.p.rapidapi.com/recipes/list-similarities?recipe_id=8138', optionVideos)
@@ -71,7 +71,7 @@ function getVideos() {
 
                 var newList = document.createElement('li');
                 var newDiv = document.createElement('div');
-                var newName = document.createElement('h3');
+                var newName = document.createElement('h4');
                 newName.textContent = data.results[i].name;
                 var newLink = document.createElement('a');
                 newLink.setAttribute('href', data.results[i].video_url)
