@@ -67,15 +67,17 @@ function getVideos() {
         console.log(data);
         for(var i = 0; i < data.results.length; i++) {
 
-            if(data.results[i].video_url !== null) {
+            if(data.results[i].original_video_url !== null) {
 
                 var newList = document.createElement('li');
                 var newDiv = document.createElement('div');
                 var newName = document.createElement('h4');
                 newName.textContent = data.results[i].name;
                 var newLink = document.createElement('a');
-                newLink.setAttribute('href', data.results[i].video_url)
-                newLink.textContent = data.results[i].video_url;
+                newLink.setAttribute('target', "_blank");
+                newLink.setAttribute('rel', "noopener noreferrer");
+                newLink.setAttribute('href', data.results[i].original_video_url)
+                newLink.textContent = data.results[i].original_video_url;
                 newDiv.appendChild(newName)
                 newDiv.appendChild(newLink)
                 newList.appendChild(newDiv)
