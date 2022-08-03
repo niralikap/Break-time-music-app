@@ -64,6 +64,7 @@ function getVideos() {
         }
     })
     .then(function(data){
+        videoListEl.textContent='';
         console.log(data);
         for(var i = 0; i < data.results.length; i++) {
 
