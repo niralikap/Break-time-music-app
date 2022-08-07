@@ -9,6 +9,24 @@ var restaurant3El = document.querySelector('#restaurants-3');
 var restaurant4El = document.querySelector('#restaurants-4');
 var restaurant5El = document.querySelector('#restaurants-5');
 
+var restaurantAdd1El = document.querySelector('#restaurant-add1');
+var restaurantAdd2El = document.querySelector('#restaurant-add2');
+var restaurantAdd3El = document.querySelector('#restaurant-add3');
+var restaurantAdd4El = document.querySelector('#restaurant-add4');
+var restaurantAdd5El = document.querySelector('#restaurant-add5');
+
+var restaurantCity1El = document.querySelector('#restaurant-city1');
+var restaurantCity2El = document.querySelector('#restaurant-city2');
+var restaurantCity3El = document.querySelector('#restaurant-city3');
+var restaurantCity4El = document.querySelector('#restaurant-city4');
+var restaurantCity5El = document.querySelector('#restaurant-city5');
+
+var restaurantWeb1El = document.querySelector('#restaurant-web1');
+var restaurantWeb2El = document.querySelector('#restaurant-web2');
+var restaurantWeb3El = document.querySelector('#restaurant-web3');
+var restaurantWeb4El = document.querySelector('#restaurant-web4');
+var restaurantWeb5El = document.querySelector('#restaurant-web5');
+
 var videoListEl = document.querySelector('#video-list');
 
 function getRestaurants (zipcode) {
@@ -28,25 +46,89 @@ function getRestaurants (zipcode) {
         })
         .then(function(data){
             console.log(data);
-            var restaurantList = {
+            var restaurantList1 = {
                 listRestaurant1: data.restaurants[1].restaurantName,
+                listRestaurantAdd1: data.restaurants[1].address,
+                listRestaurantCity1: data.restaurants[1].cityName,
+                listRestaurantWeb1: data.restaurants[1].website,
+                };
+            
+            var restaurantList2 = 
+                {
                 listRestaurant2: data.restaurants[2].restaurantName,
+                listRestaurantAdd2: data.restaurants[2].address,
+                listRestaurantCity2: data.restaurants[2].cityName,
+                listRestaurantWeb2: data.restaurants[2].website,
+                };
+            
+            var restaurantList3 = {
                 listRestaurant3: data.restaurants[3].restaurantName,
+                listRestaurantAdd3: data.restaurants[3].address,
+                listRestaurantCity3: data.restaurants[3].cityName,
+                listRestaurantWeb3: data.restaurants[3].website,
+                };
+
+            var restaurantList4 = 
+                {
                 listRestaurant4: data.restaurants[4].restaurantName,
+                listRestaurantAdd4: data.restaurants[4].address,
+                listRestaurantCity4: data.restaurants[4].cityName,
+                listRestaurantWeb4: data.restaurants[4].website,
+                };
+
+            var restaurantList5 =
+                {
                 listRestaurant5: data.restaurants[5].restaurantName,
-            } 
-            localStorage.setItem('restaurantList', JSON.stringify(restaurantList));
+                listRestaurantAdd5: data.restaurants[5].address,
+                listRestaurantCity5: data.restaurants[5].cityName,
+                listRestaurantWeb5: data.restaurants[5].website,
+                };
+         
+            localStorage.setItem('restaurantList1', JSON.stringify(restaurantList1));
+            localStorage.setItem('restaurantList2', JSON.stringify(restaurantList2));
+            localStorage.setItem('restaurantList3', JSON.stringify(restaurantList3));
+            localStorage.setItem('restaurantList4', JSON.stringify(restaurantList4));
+            localStorage.setItem('restaurantList5', JSON.stringify(restaurantList5));
             renderRestaurants();
         })
     }
     
     function renderRestaurants() {
-        var localRestaurant = JSON.parse(localStorage.getItem('restaurantList'));
-        restaurant1El.textContent = localRestaurant.listRestaurant1;
-        restaurant2El.textContent = localRestaurant.listRestaurant2;
-        restaurant3El.textContent = localRestaurant.listRestaurant3;
-        restaurant4El.textContent = localRestaurant.listRestaurant4;
-        restaurant5El.textContent = localRestaurant.listRestaurant5;
+        var localRestaurant1 = JSON.parse(localStorage.getItem('restaurantList1'));
+        var localRestaurant2 = JSON.parse(localStorage.getItem('restaurantList2'));
+        var localRestaurant3 = JSON.parse(localStorage.getItem('restaurantList3'));
+        var localRestaurant4 = JSON.parse(localStorage.getItem('restaurantList4'));
+        var localRestaurant5 = JSON.parse(localStorage.getItem('restaurantList5'));
+
+        restaurant1El.textContent = localRestaurant1.listRestaurant1;
+        restaurantAdd1El.textContent = localRestaurant1.listRestaurantAdd1;
+        restaurantCity1El.textContent = localRestaurant1.listRestaurantCity1;
+        restaurantWeb1El.textContent = localRestaurant1.listRestaurantWeb1;
+        //restaurantWeb1El.setAttribute('href', data.restaurants[1].website);
+
+        restaurant2El.textContent = localRestaurant2.listRestaurant2;
+        restaurantAdd2El.textContent = localRestaurant2.listRestaurantAdd2;
+        restaurantCity2El.textContent = localRestaurant2.listRestaurantCity2;
+        restaurantWeb2El.textContent = localRestaurant2.listRestaurantWeb2;
+        //restaurantWeb2El.setAttribute('href', data.restaurants[2].website);
+
+        restaurant3El.textContent = localRestaurant3.listRestaurant3;
+        restaurantAdd3El.textContent = localRestaurant3.listRestaurantAdd3;
+        restaurantCity3El.textContent = localRestaurant3.listRestaurantCity3;
+        restaurantWeb3El.textContent = localRestaurant3.listRestaurantWeb3;
+        //restaurantWeb3El.setAttribute('href', data.restaurants[3].website);
+
+        restaurant4El.textContent = localRestaurant4.listRestaurant4;
+        restaurantAdd4El.textContent = localRestaurant4.listRestaurantAdd4;
+        restaurantCity4El.textContent = localRestaurant4.listRestaurantCity4;
+        restaurantWeb4El.textContent = localRestaurant4.listRestaurantWeb4;
+        //restaurantWeb4El.setAttribute('href', data.restaurants[4].website);
+
+        restaurant5El.textContent = localRestaurant5.listRestaurant5;
+        restaurantAdd5El.textContent = localRestaurant5.listRestaurantAdd5;
+        restaurantCity5El.textContent = localRestaurant5.listRestaurantCity5;
+        restaurantWeb5El.textContent = localRestaurant5.listRestaurantWeb5;
+        //restaurantWeb5El.setAttribute('href', data.restaurants[5].website);
     }
 
 function getVideos() {
