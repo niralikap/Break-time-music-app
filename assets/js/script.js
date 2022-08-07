@@ -103,32 +103,32 @@ function getRestaurants (zipcode) {
         restaurant1El.textContent = localRestaurant1.listRestaurant1;
         restaurantAdd1El.textContent = localRestaurant1.listRestaurantAdd1;
         restaurantCity1El.textContent = localRestaurant1.listRestaurantCity1;
+        restaurantWeb1El.setAttribute('href', localRestaurant1.listRestaurantWeb1);
         restaurantWeb1El.textContent = localRestaurant1.listRestaurantWeb1;
-        //restaurantWeb1El.setAttribute('href', data.restaurants[1].website);
 
         restaurant2El.textContent = localRestaurant2.listRestaurant2;
         restaurantAdd2El.textContent = localRestaurant2.listRestaurantAdd2;
         restaurantCity2El.textContent = localRestaurant2.listRestaurantCity2;
+        restaurantWeb2El.setAttribute('href', localRestaurant2.listRestaurantWeb2);
         restaurantWeb2El.textContent = localRestaurant2.listRestaurantWeb2;
-        //restaurantWeb2El.setAttribute('href', data.restaurants[2].website);
 
         restaurant3El.textContent = localRestaurant3.listRestaurant3;
         restaurantAdd3El.textContent = localRestaurant3.listRestaurantAdd3;
         restaurantCity3El.textContent = localRestaurant3.listRestaurantCity3;
+        restaurantWeb4El.setAttribute('href', localRestaurant3.listRestaurantWeb3);
         restaurantWeb3El.textContent = localRestaurant3.listRestaurantWeb3;
-        //restaurantWeb3El.setAttribute('href', data.restaurants[3].website);
 
         restaurant4El.textContent = localRestaurant4.listRestaurant4;
         restaurantAdd4El.textContent = localRestaurant4.listRestaurantAdd4;
         restaurantCity4El.textContent = localRestaurant4.listRestaurantCity4;
+        restaurantWeb4El.setAttribute('href', localRestaurant4.listRestaurantWeb4);
         restaurantWeb4El.textContent = localRestaurant4.listRestaurantWeb4;
-        //restaurantWeb4El.setAttribute('href', data.restaurants[4].website);
 
         restaurant5El.textContent = localRestaurant5.listRestaurant5;
         restaurantAdd5El.textContent = localRestaurant5.listRestaurantAdd5;
         restaurantCity5El.textContent = localRestaurant5.listRestaurantCity5;
+        restaurantWeb5El.setAttribute('href', localRestaurant5.listRestaurantWeb5);
         restaurantWeb5El.textContent = localRestaurant5.listRestaurantWeb5;
-        //restaurantWeb5El.setAttribute('href', data.restaurants[5].website);
     }
 
 function getVideos() {
