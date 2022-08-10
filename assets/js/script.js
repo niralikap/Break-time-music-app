@@ -33,7 +33,7 @@ function getRestaurants (zipcode) {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '717b7aa287mshd26234a7983062ap1889c4jsn203d0606c5be',
+            'X-RapidAPI-Key': '8f3f52aaefmsh9d3bfe6ab22e3e7p16633bjsne5ade91a2959',
 		    'X-RapidAPI-Host': 'restaurants-near-me-usa.p.rapidapi.com'
         }
     };
@@ -135,7 +135,7 @@ function getVideos() {
     const optionVideos = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '717b7aa287mshd26234a7983062ap1889c4jsn203d0606c5be',
+            'X-RapidAPI-Key': '8f3f52aaefmsh9d3bfe6ab22e3e7p16633bjsne5ade91a2959',
 		    'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
         }
     };
